@@ -6,7 +6,7 @@ plugins {
 
 android {
     compileSdkVersion 29
-
+    dataBinding.enabled = true
     defaultConfig {
         applicationId "jp.making.felix.composeplayground"
         minSdkVersion 26
@@ -45,6 +45,33 @@ dependencies {
     implementation 'androidx.ui:ui-layout:0.1.0-dev03'
     implementation 'androidx.ui:ui-material:0.1.0-dev03'
     implementation 'androidx.ui:ui-tooling:0.1.0-dev03'
+    implementation 'androidx.ui:ui-foundation:0.1.0-dev03'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+
+    def dagger_version = "2.26"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    def retrofit_version = "2.7.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+    def okhttp_version = "4.3.1"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    def moshi_version = "1.9.2"
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    annotationProcessor "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+
+    def coil_version = "0.10.1"
+    implementation "io.coil-kt:coil:$coil_version"
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
